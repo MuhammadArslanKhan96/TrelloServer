@@ -10,6 +10,10 @@ const io = new Server(server, {
       origin: "*",
     },
   });
+
+app.get("*", (req,res) => {
+    res.send("Just for socket.io")
+})
   // io.set("transports", ["websocket"]);
   io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
